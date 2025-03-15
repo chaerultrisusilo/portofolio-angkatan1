@@ -1,0 +1,47 @@
+body {
+    padding: 20px;
+    margin: 0;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.detail {
+    text-align: center;
+
+}
+
+.detail img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+
+}
+
+.kemampuan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.kemampuan h2,
+.kemampuan .kemampuan-list {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+

@@ -1,0 +1,50 @@
+header {
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 150px;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    font-size: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    line-height: 2px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 168, 6);
+    padding: 0.8rem 1.6rem;
+    font-weight: bold;
+
+}
+
+.btn:hover {
+    background-color: rgb(195, 131, 11);
+    display: flex;
+    justify-content: center;
+}
