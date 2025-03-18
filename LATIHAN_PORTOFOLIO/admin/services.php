@@ -5,33 +5,20 @@ session_start();
 $services = mysqli_query($conn, "SELECT * FROM services");
 $rows = mysqli_fetch_all($services, MYSQLI_ASSOC);
 
-// middleware
-if (empty($_SESSION['email'])) {
-    header("location:../loginpage.php");
-}
+if (isset($_GET['del'])) {
+    $id = $_GET['del'];
 
-if (isset($_GET['idDel'])) {
-    $id = $_GET['idDel'];
-    $cekFotoDel = mysqli_query($conn, "SELECT foto FROM service WHERE id = $id");
-    $rowFotoDel = mysqli_fetch_assoc($cekFotoDel);
-
-    if ($rowFotoDel) {
-        unlink("../assets/uploads/" . $rowFotoDel['foto']);
-        $query = mysqli_query($conn, "DELETE FROM service WHERE id = $id");
-        if ($query) {
-            header('location: services.php');
+    $cekFOTO = mysqli_query($conn, "SELECT foto FROM service WHERE id = $id");
+    $rowcekFoto = mysqli_fetch_assoc($cekFOTO);
+    if ($rowcekFoto['foto']) {
+        unlink("../assets/uploads/" . $rowcekFoto['foto']);
+        $delete = mysqli_query($conn, "DELETE FROM service WHERE id = $id");
+        if ($delete) {
+            header("Location: services.php");
         }
     }
 }
-
-// $querySetting = mysqli_query($conn, "SELECT * FROM setting WHERE ID = 1");
-
-// $querySetting = mysqli_query($conn, "SELECT  * FROM setting WHERE id = 1");
-// $rowEdt = mysqli_fetch_assoc($querySetting);
-// Jika tombol simpan di klik 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,8 +31,8 @@ if (isset($_GET['idDel'])) {
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="../assets/img/favicon.png" rel="icon">
-    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -103,13 +90,13 @@ if (isset($_GET['idDel'])) {
                         <div class="card-body">
                             <h5 class="card-title">Services</h5>
                             <div class="table table-responsive">
-                                <a href="add_edit_services.php" class="btn btn-primary mb-2">CREATE</a>
+                                <a class="btn btn-primary mb-2" href="add_edit_services.php">CREATE</a>
                                 <table class="table table-bordered text-center">
                                     <tr>
                                         <th>No</th>
-                                        <th>Service Name</th>
-                                        <th>Photo</th>
-                                        <th>Action</th>
+                                        <th>Nama Services</th>
+                                        <th>FOTO</th>
+                                        <th>Actions</th>
                                     </tr>
                                     <?php
                                     $no = 1;
@@ -118,21 +105,21 @@ if (isset($_GET['idDel'])) {
                                         <tr>
                                             <td><?= $no++ ?></td>
                                             <td><?= $row['nama_service'] ?></td>
-                                            <td><img width="190" src="../assets/uploads/<?= $row['foto'] ?>" alt=""></td>
+                                            <td><img width="200" src="../assets/uploads/<?php echo $row['foto'] ?>" alt=""></td>
                                             <td>
-                                                <a href="add_edit_services.php?idEdt=<?php echo $row['id'] ?>" class="btn btn-success btn-sm">EDIT</a>
-                                                <a onclick="return confirm ('Yakin ingin menghapus?')" href="services.php?idDel=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm">DELETE</a>
+                                                <a class="btn btn-success btn-sm" href="add_edit_services.php?Edit=<?= $row['id'] ?>">Edit</a>
+                                                <a class="btn btn-danger btn-sm" href="services.php?del=<?= $row['id'] ?>">Delete</a>
                                             </td>
                                         </tr>
-                                    <?php } ?>
-
-
+                                    <?php
+                                    } ?>
                                 </table>
                             </div>
                         </div>
                     </div>
 
                 </div>
+
 
             </div>
         </section>

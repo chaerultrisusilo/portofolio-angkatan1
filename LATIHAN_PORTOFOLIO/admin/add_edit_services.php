@@ -8,8 +8,8 @@ if (empty($_SESSION['email'])) {
 }
 
 if (isset($_POST['simpan'])) {
-    $nama_service = $_POST['nama_service'];
-    $foto = $_FILES['foto'];
+    $nama_service = $_POST['kategori'];
+    $foto = $_FILES['kategori'];
 
     if ($foto['error'] == 0) {
         $fileName = uniqid() . '_' . basename($foto['name']);

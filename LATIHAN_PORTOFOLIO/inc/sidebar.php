@@ -3,36 +3,55 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="index.html">
+            <a class="nav-link collapsed" href="index.php">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
         </li><!-- End Dashboard Nav -->
 
+        <li class="nav-heading">Pages</li>
 
-        </li><!-- End Blank Page Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="settings.php?sidebar=setting">
+                <i class="bi bi-person"></i>
+                <span>General Settings</span>
+            </a>
+        </li><!-- End General Settings Page Nav -->
 
-        </li><!-- End Profile Page Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="services.php">
+                <i class="bi bi-person"></i>
+                <span>Services</span>
+            </a>
+        </li><!-- End Services Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="kontak.php">
+                <i class="bi bi-person"></i>
+                <span>Contact</span>
+            </a>
+        </li><!-- End Services Page Nav -->
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="resume.php">
                 <i class="bi bi-person"></i>
                 <span>Resume</span>
             </a>
+        </li><!-- End Services Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="services.php">
+            <a class="nav-link collapsed" href="project.php">
                 <i class="bi bi-person"></i>
-                <span>Contact</span>
+                <span>Project</span>
             </a>
+        </li><!-- End Services Page Nav -->
 
-        <li class="nav-heading">Pages</li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="setting.php?sidebar=setting">
-                <i class="bi bi-file-earmark"></i>
-                <span>Pengaturan Umum</span>
+            <a class="nav-link collapsed" href="blog.php">
+                <i class="bi bi-newspaper"></i>
+                <span>Blog</span>
             </a>
-        </li><!-- End Profile Page Nav -->
-
+        </li><!-- End Services Page Nav -->
 
     </ul>
 
