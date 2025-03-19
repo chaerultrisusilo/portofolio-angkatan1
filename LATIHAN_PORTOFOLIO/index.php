@@ -614,6 +614,13 @@ $rowProjects = mysqli_fetch_all($selectProjects, MYSQLI_ASSOC);
 
     <script src="assets/fe/js/main.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script>
+        $('.add-row').click(function() {
+            alert('testing');
+        });
+    </script>
+
 </body>
 
 </html>

@@ -20,8 +20,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="?page=paket">
-                        <i class="bi bi-circle"></i><span>Paket</span>
+                    <a href="?page=service">
+                        <i class="bi bi-circle"></i><span>Service</span>
                     </a>
                 </li>
                 <li>
@@ -89,22 +89,22 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-journal-text"></i><span>Transaction</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="forms-elements.html">
-                        <i class="bi bi-circle"></i><span>Form Elements</span>
+                    <a href="?pg=trans-order">
+                        <i class="bi bi-circle"></i><span>Data Transaction</span>
                     </a>
                 </li>
                 <li>
                     <a href="forms-layouts.html">
-                        <i class="bi bi-circle"></i><span>Form Layouts</span>
+                        <i class="bi bi-circle"></i><span>Pick Up Laundry</span>
                     </a>
                 </li>
                 <li>
                     <a href="forms-editors.html">
-                        <i class="bi bi-circle"></i><span>Form Editors</span>
+                        <i class="bi bi-circle"></i><span>Report</span>
                     </a>
                 </li>
                 <li>

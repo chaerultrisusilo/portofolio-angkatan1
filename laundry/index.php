@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
             $_SESSION['ID_USER'] = $rowUser['id'];
             $_SESSION['NAME'] = $rowUser['name'];
 
-            header("location:dashboard.php");
+            header("Location:dashboard.php");
         }
     } else {
 
