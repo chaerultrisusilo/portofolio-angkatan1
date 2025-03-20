@@ -33,12 +33,15 @@ if (isset($_POST['edit'])) {
     }
 }
 
+$queryLevels = mysqli_query($koneksi, "SELECT * FROM levels ORDER BY id DESC");
+$rowLevels = mysqli_fetch_all($queryLevels, MYSQLI_ASSOC);
+
 ?>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3>Trans Order</h3>
+                <h3><?php echo isset($_GET['edit']) ? 'edit' : 'Create New' ?>Trans Order</h3>
             </div>
             <div class="card-body mt-3">
                 <form action="" method="post">
@@ -51,52 +54,64 @@ if (isset($_POST['edit'])) {
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="trans_code" readonly>
                                 </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <div class="col-sm-3">
+                                    <label for="">Order Date</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="date" class="form-control" name="order_date">
+                                    <div class="mb-3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
                                 <div class="mb-3 row">
-                                    <div class="col-sm-3">
-                                        <label for="">Order Date</label>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <input type="date" class="form-control" name="order_date">
-                                        <div class="mb-3">
-                                            <div class="mb-3 row">
-                                            </div>
-                                            <div class="mb-3 row">
-                                                <div class="col-sm-3">
-                                                    <label for="">Order Date</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <label for="">Pickup Date</label>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <input type="date" class="form-control" name="order_end_date">
-                                            </div>
-                                        </div>
+                                    <div class="col-sm-4">
+                                        <label for="">Customer Name</label>
                                     </div>
                                 </div>
-                                <div class="row mt-5">
-                                    <div class="col-sm-12">
-                                        <div align="right" class="mb-3">
-                                            <button type="button" class="btn btn-success btn-sm add-row">Add Button</button>
-                                        </div>
-                                        <table class="table table-bordered table-order">
-                                            <thead>
-                                                <tr>
-                                                    <th>Service</th>
-                                                    <th>Qty</th>
-                                                    <th>Notes</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody></tbody>
-                                        </table>
-                                    </div>
+                                <div class="col-sm-8">
+                                    <select name="id_customer" id="" class="form-control">
+                                        <option value="">Choose Customer</option>
+
+                                        <option value=""></option>
+                                    </select>
                                 </div>
-                                <div class="mb-3">
-                                    <button class="btn btn-primary" type="submit" name="<?php echo isset($_GET['edit']) ? 'edit' : 'save' ?>">Save</button>
+                            </div>
+                            <div class="mb-3 row">
+                                <div class="col-sm-4">
+                                    <label for="">Pickup Date</label>
                                 </div>
-                </form>
+                                <div class="cold-sm-5"></div>
+                                <input type="date" class="form-control" name="order_end_date">
+                            </div>
+                        </div>
+                    </div>
             </div>
+            <div class="row mt-5">
+                <div class="col-sm-12">
+                    <div align="right" class="mb-3">
+                        <button type="button" class="btn btn-success btn-sm add-row">Add Row</button>
+                    </div>
+                    <table class="table table-bordered table-order">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Qty</th>
+                                <th>Notes</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit" name="<?php echo isset($_GET['edit']) ? 'edit' : 'save' ?>">Save</button>
+            </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
